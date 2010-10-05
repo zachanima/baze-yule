@@ -2,7 +2,7 @@ class ShopsController < ApplicationController
   before_filter :find_shop, :only => [:show, :edit, :update]
 
   def index
-    @shops = Shop.order('name')
+    @shops = Shop.order(:name)
   end
 
   # def show

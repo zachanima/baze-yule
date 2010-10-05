@@ -8,7 +8,11 @@
 </head>
 <body>
 
-<%= yield %>
+  <ul id="nav">
+    <li><%= link_to 'Shops', shops_path %></li>
+  </ul>
+
+  <%= yield %>
 
 </body>
 </html>
