@@ -1,0 +1,24 @@
+<%= form_for @product_template do |f| %>
+  <fieldset>
+    <legend>Fields for product template</legend>
+    <ol>
+      <li>
+        <%= f.label :name, :class => 'required' %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :brand %>
+        <%= f.text_field :brand %>
+      </li>
+      <li>
+        <%= f.label :identifier %>
+        <%= f.text_field :identifier %>
+      </li>
+      <li>
+        <%= f.label :text %>
+        <%= f.text_area :text %>
+      </li>
+    </ol>
+    <%= f.submit %>
+  </fieldset>
+<% end %>

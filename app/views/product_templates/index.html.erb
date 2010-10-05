@@ -1,0 +1,28 @@
+<h1>List all product templates</h1>
+<%= link_to 'New product template', new_product_template_path %>
+
+<%= form_tag do %>
+  With selected:
+  <%= submit_tag 'Copy', :disabled => true %>
+  <%= submit_tag 'Delete', :disabled => true %>
+  <table>
+    <thead>
+      <tr>
+        <th />
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Identifier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product_templates.each do |product_template| %>
+        <tr>
+          <td><%= check_box_tag 'product_template_ids', product_template.id %></td>
+          <td><%= link_to product_template.name, edit_product_template_path(product_template) %></td>
+          <td><%= product_template.brand %></td>
+          <td><%= product_template.identifier %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
