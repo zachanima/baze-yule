@@ -1,0 +1,36 @@
+<%= form_for @shop do |f| %>
+  <fieldset>
+    <legend>Fields for shop</legend>
+    <ol>
+      <li>
+        <%= f.label :name, :class => 'required' %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :slug %>
+        <%= f.text_field :slug %>
+      </li>
+      <li>
+        <%= f.label :username_text %>
+        <%= f.text_field :username_text %>
+      </li>
+      <li>
+        <%= f.label :password_text %>
+        <%= f.text_field :password_text %>
+      </li>
+      <li>
+        <%= f.label :text %>
+        <%= f.text_area :text %>
+      </li>
+      <li>
+        <%= f.label :opens_on %>
+        <%= f.date_select :opens_on %>
+      </li>
+      <li>
+        <%= f.label :closes_on %>
+        <%= f.date_select :closes_on %>
+      </li>
+    </ol>
+    <%= f.submit %>
+  </fieldset>
+<% end %>

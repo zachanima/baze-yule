@@ -10,6 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20101005133805) do
+
+  create_table "shops", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "username_text"
+    t.string   "password_text"
+    t.text     "text"
+    t.date     "opens_on"
+    t.date     "closes_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

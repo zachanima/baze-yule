@@ -1,0 +1,34 @@
+<h1>List all shops</h1>
+<%= link_to 'New shop', new_shop_path %>
+
+<%= form_tag do %>
+  With selected:
+  <%= submit_tag 'Copy', :disabled => true %>
+  <%= submit_tag 'Delete', :disabled => true %>
+  <table>
+    <thead>
+      <tr>
+        <th />
+        <th>Name</th>
+        <th>Slug</th>
+        <th>Username text</th>
+        <th>Password text</th>
+        <th>Opens on</th>
+        <th>Closes on</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shops.each do |shop| %>
+        <tr>
+          <td><%= check_box_tag 'shop_ids', shop.id %></td>
+          <td><%= link_to shop.name, edit_shop_path(shop) %></td>
+          <td><%= link_to shop.slug, shop %></td>
+          <td><%= shop.username_text %></td>
+          <td><%= shop.password_text %></td>
+          <td><%= shop.opens_on.to_s(:short) %></td>
+          <td><%= shop.closes_on.to_s(:short) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
