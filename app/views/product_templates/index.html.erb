@@ -1,7 +1,7 @@
 <h1>List all product templates</h1>
-<%= link_to 'New product template', new_product_template_path %>
 
 <%= form_tag do %>
+  <%= link_to 'New product template', new_product_template_path %><br />
   With selected:
   <%= submit_tag 'Copy', :disabled => true %>
   <%= submit_tag 'Delete', :disabled => true %>

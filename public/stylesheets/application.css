@@ -1,0 +1,198 @@
+/* general */
+
+body {
+  background-color: #eee;
+  color: #666;
+  margin: 0;
+}
+
+body, input, textarea {
+  font: 10pt arial, sans-serif;
+}
+
+a {
+  color: #e82;
+}
+
+a:hover {
+  color: #333;
+}
+
+h1 {
+  font-size: 18pt;
+  margin: 0 0 16px 0;
+}
+
+
+
+/* class-specific */
+
+body div.fixed-width {
+  margin: auto;
+  width: 950px;
+}
+
+
+
+/* header */
+
+#header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+#header h1 {
+  margin-bottom: 0;
+}
+
+#header span {
+  float: right;
+  text-align: right;
+}
+
+
+
+/* nav */
+
+#nav {
+  background-color: #e82;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  padding-top: 4px;
+}
+
+#nav ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+#nav li {
+  background-color: #fff;
+  display: inline-block;
+  font-size: 13pt;
+  font-weight: bold;
+  padding: 4px 16px 8px 16px;
+  text-transform: uppercase;
+}
+
+#nav a {
+  background-color: #e82;
+  color: #fff;
+  display: block;
+  margin: -4px -16px -8px -16px;
+  padding: 4px 16px 8px 16px;
+  text-decoration: none;
+}
+
+#nav a:hover {
+  color: #666;
+}
+
+
+
+/* content */
+
+#content {
+  background-color: #fff;
+  border-top: 5px solid #e82;
+  border-bottom: 1px solid #e82;
+  margin-top: 16px;
+  padding: 16px;
+  width: 918px;
+}
+
+
+
+/* footer */
+
+#footer {
+  font-size: 9pt;
+  margin: 16px auto;
+}
+
+
+
+/* table */
+
+form table {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  margin-top: 16px;
+  width: 100%;
+}
+
+form tr:nth-child(2n+1) {
+  background-color: #fff;
+}
+
+form tr:nth-child(2n) {
+  background-color: #eee;
+}
+
+form th {
+  background-color: #ccc;
+  color: #666;
+  text-align: left;
+}
+
+form th, td {
+  padding-left: 4px;
+}
+
+form th:first-child, form td:first-child { /* checkbox */
+  padding: 0;
+  width: 0;
+}
+
+form td:nth-child(2) { /* name */
+  font-weight: bold;
+}
+
+
+
+/* form */
+
+form fieldset {
+  border: 1px solid #ccc;;
+  border-width: 1px 0 0 0;
+  margin-top: 16px;
+  padding: 16px 0 0 0;
+}
+
+form legend {
+  display: none;
+}
+
+form ol {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+form li {
+  margin: 8px 0;
+}
+
+form label {
+  display: block;
+  float: left;
+  margin-right: 12px;
+  padding-top: 3px;
+  text-align: right;
+  width: 200px;
+}
+
+form label.required:before {
+  color: #f00;
+  content: '* ';
+}
+
+form fieldset input[type=text], form fieldset textarea {
+  width: 690px;
+}
+
+form fieldset input[type=submit] {
+  margin-left: 212px;
+}

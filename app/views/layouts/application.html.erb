@@ -7,13 +7,30 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  
+  <div id="header">
+    <div class="fixed-width">
+      <h1>Baze JuleSystem</h1>
+      <span><%= Time.now.to_s(:short) %></span>
+    </div>
+  </div>
 
-  <ul id="nav">
-    <li><%= link_to 'Shops', shops_path %></li>
-    <li><%= link_to 'Product templates', product_templates_path %></li>
-  </ul>
+  <div id="nav">
+    <div class="fixed-width">
+      <ul>
+        <li><%= link_to_unless_current 'Shops', shops_path %></li>
+        <li><%= link_to_unless_current 'Product templates', product_templates_path %></li>
+      </ul>
+    </div>
+  </div>
 
-  <%= yield %>
+  <div id="content" class="fixed-width">
+    <%= yield %>
+  </div>
+
+  <div id="footer" class="fixed-width">
+    &copy; 2010 <a href="http://baze.dk/">Baze A/S</a>
+  </div>
 
 </body>
 </html>
