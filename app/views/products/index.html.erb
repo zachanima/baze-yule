@@ -13,6 +13,7 @@
         <th>Identifier</th>
         <th>Image</th>
         <th>Brand</th>
+        <th>Shop</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +24,7 @@
           <td><%= product.identifier %></td>
           <td><%= tooltip(product.image, product.image_file_name, :img) if product.image.exists? %></td>
           <td><%= product.brand %></td>
+          <td><%= product.shop.name %></td>
         </tr>
       <% end %>
     </tbody>

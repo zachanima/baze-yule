@@ -1,6 +1,7 @@
 class Shop < ActiveRecord::Base
   Locales = { 'da' => 'Danish', 'en' => 'English' }
 
+  has_many :products
   validates_presence_of :name
   validates_format_of :slug, :with => /\A([-a-z0-9]+)?\Z/
   validates_uniqueness_of :slug

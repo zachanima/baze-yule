@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @shops = Shop.order(:name)
   end
 
   def create
@@ -21,7 +22,9 @@ class ProductsController < ApplicationController
     end
   end
 
-  # def edit
+  def edit
+    @shops = Shop.order(:name)
+  end
 
   def update
     if @product.update_attributes(params[:product])
