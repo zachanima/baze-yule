@@ -40,7 +40,7 @@
     </ol>
   </fieldset>
   <fieldset>
-    <%= f.label :logo, @shop.logo.exists? ? tooltip(@shop.logo, @shop.logo_file_name, :img) : nil %>
+    <%= f.label :logo, tooltip(@shop.logo, @shop.logo_file_name) %>
     <%= f.file_field :logo %>
   </fieldset>
   <fieldset>

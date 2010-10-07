@@ -21,7 +21,7 @@
     </ol>
   </fieldset>
   <fieldset>
-    <%= f.label :image, @product.image.exists? ? tooltip(@product.image, @product.image_file_name, :img) : nil %>
+    <%= f.label :image, tooltip(@product.image, @product.image_file_name) %>
     <%= f.file_field :image %>
   </fieldset>
   <fieldset>

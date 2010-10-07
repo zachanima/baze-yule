@@ -14,9 +14,10 @@
         <th>Logo</th>
         <th>Username text</th>
         <th>Password text</th>
+        <th>Products</th>
+        <th>Locale</th>
         <th>Opens on</th>
         <th>Closes on</th>
-        <th>Locale</th>
       </tr>
     </thead>
     <tbody>
@@ -25,12 +26,13 @@
           <td><%= check_box_tag 'shop_ids', shop.id %></td>
           <td><%= link_to shop.name, edit_shop_path(shop) %></td>
           <td><%= link_to shop.slug, shop %></td>
-          <td><%= tooltip(shop.logo, shop.logo_file_name, :img) if shop.logo.exists? %></td>
+          <td><%= tooltip(shop.logo, shop.logo_file_name) %></td>
           <td><%= shop.username_text %></td>
           <td><%= shop.password_text %></td>
+          <td><%= tooltip(shop.products, t('product', :count => shop.products.count)) %>
+          <td><%= shop.locale_text %></td>
           <td><%= shop.opens_on.to_s(:short) %></td>
           <td><%= shop.closes_on.to_s(:short) %></td>
-          <td><%= shop.locale_text %></td>
         </tr>
       <% end %>
     </tbody>

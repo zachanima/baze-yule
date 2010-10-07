@@ -220,9 +220,14 @@ fieldset input[type=submit] {
   border: 1px solid #ccc;
   display: block;
   margin-top: 5px;
-  max-width: 250px;
   padding: 8px;
   position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover div {
+  white-space: pre;
+  width: 250px;
 }
 
 
