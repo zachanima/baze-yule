@@ -8,7 +8,7 @@ class Shop < ActiveRecord::Base
   validates_inclusion_of :locale, :in => Locales.each_key
   before_save lambda { self.slug.blank? ? self.slug = self.name.parameterize : nil }
 
-  has_attached_file :logo, :styles => { :original => '500x100>', :thumb => '200x100>' }
+  has_attached_file :logo, :styles => { :original => '500x100>' }
 
   def locales_for_select
     Locales.invert
