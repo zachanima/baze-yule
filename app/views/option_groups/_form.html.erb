@@ -1,0 +1,18 @@
+<%= form_for @option_group do |f| %>
+  <fieldset>
+    <legend>Fields for option group</legend>
+    <ol>
+      <li>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :text %>
+        <%= f.text_field :text %>
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset>
+    <%= f.submit %>
+  </fieldset>
+<% end %>
