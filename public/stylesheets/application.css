@@ -195,7 +195,7 @@ fieldset input[type=text], textarea {
 }
 
 textarea {
-  height: 4em;
+  height: 96px;
 }
 
 fieldset input[type=submit] {
