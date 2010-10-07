@@ -21,7 +21,7 @@
           <td><%= check_box_tag 'product_ids', product.id %></td>
           <td><%= link_to product.name, edit_product_path(product) %></td>
           <td><%= product.identifier %></td>
-          <td><%= tooltip(product.image.url, product.image_file_name, :img) if product.image.exists? %></td>
+          <td><%= tooltip(product.image, product.image_file_name, :img) if product.image.exists? %></td>
           <td><%= product.brand %></td>
         </tr>
       <% end %>
