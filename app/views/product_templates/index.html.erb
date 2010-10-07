@@ -10,8 +10,9 @@
       <tr>
         <th />
         <th>Name</th>
-        <th>Brand</th>
         <th>Identifier</th>
+        <th>Image</th>
+        <th>Brand</th>
       </tr>
     </thead>
     <tbody>
@@ -19,8 +20,9 @@
         <tr>
           <td><%= check_box_tag 'product_template_ids', product_template.id %></td>
           <td><%= link_to product_template.name, edit_product_template_path(product_template) %></td>
-          <td><%= product_template.brand %></td>
           <td><%= product_template.identifier %></td>
+          <td><%= tooltip(product_template.image.url, product_template.image_file_name, :img) if product_template.image.exists? %></td>
+          <td><%= product_template.brand %></td>
         </tr>
       <% end %>
     </tbody>

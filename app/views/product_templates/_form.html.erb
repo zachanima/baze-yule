@@ -1,4 +1,4 @@
-<%= form_for @product_template do |f| %>
+<%= form_for @product_template, :html => { :multipart => true } do |f| %>
   <fieldset>
     <legend>Fields for product template</legend>
     <ol>
@@ -19,6 +19,10 @@
         <%= f.text_area :text %>
       </li>
     </ol>
+  </fieldset>
+  <fieldset>
+    <%= f.label :image, @product_template.image.exists? ? image_tag(@product_template.image.url(:thumb)) : nil %>
+    <%= f.file_field :image %>
   </fieldset>
   <fieldset>
     <%= f.submit %>
