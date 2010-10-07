@@ -216,10 +216,12 @@ fieldset input[type=submit] {
 }
 
 .tooltip:hover div, .tooltip:hover img {
+  background-color: #fff;
   border: 1px solid #ccc;
   display: block;
   margin-top: 5px;
   max-width: 250px;
+  padding: 8px;
   position: absolute;
 }
 
