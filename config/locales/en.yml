@@ -4,3 +4,11 @@ en:
   product:
     one: '1 product'
     other: '%{count} products'
+
+  # Shop
+  welcome: 'Welcome'
+  presents: 'Presents'
+  logout: 'Log out'
+  date:
+    formats:
+      default: '%B %e, %Y'
