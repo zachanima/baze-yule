@@ -1,6 +1,6 @@
-<%= form_for @product_template, :html => { :multipart => true } do |f| %>
+<%= form_for @product, :html => { :multipart => true } do |f| %>
   <fieldset>
-    <legend>Fields for product template</legend>
+    <legend>Fields for product</legend>
     <ol>
       <li>
         <%= f.label :name, :class => 'required' %>
@@ -21,7 +21,7 @@
     </ol>
   </fieldset>
   <fieldset>
-    <%= f.label :image, @product_template.image.exists? ? image_tag(@product_template.image.url(:thumb)) : nil %>
+    <%= f.label :image, @product.image.exists? ? image_tag(@product.image.url(:thumb)) : nil %>
     <%= f.file_field :image %>
   </fieldset>
   <fieldset>
