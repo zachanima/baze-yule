@@ -33,11 +33,7 @@
     </ol>
   </fieldset>
   <fieldset>
-    <% if @shop.logo.exists? %>
-      <%= f.label :logo, image_tag(@shop.logo.url(:thumb)) %>
-    <% else %>
-      <%= f.label :logo %>
-    <% end %>
+    <%= f.label :logo, @shop.logo.exists? ? image_tag(@shop.logo.url(:thumb)) : nil %>
     <%= f.file_field :logo %>
   </fieldset>
   <fieldset>
