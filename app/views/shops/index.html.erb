@@ -16,6 +16,7 @@
         <th>Password text</th>
         <th>Opens on</th>
         <th>Closes on</th>
+        <th>Locale</th>
       </tr>
     </thead>
     <tbody>
@@ -29,6 +30,7 @@
           <td><%= shop.password_text %></td>
           <td><%= shop.opens_on.to_s(:short) %></td>
           <td><%= shop.closes_on.to_s(:short) %></td>
+          <td><%= shop.locale_text %></td>
         </tr>
       <% end %>
     </tbody>

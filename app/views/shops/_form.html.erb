@@ -1,6 +1,9 @@
 <%= form_for @shop, :html => { :multipart => true } do |f| %>
   <fieldset>
     <legend>Fields for shop</legend>
+    <% [:name, :slug, :username_text, :password_text, :text, :opens_on, :closes_on, :locale].each do |field| %>
+      <%=raw "#{field.to_s.titleize} #{@shop.errors[field]}<br />"unless @shop.errors[field].blank? %>
+    <% end %>
     <ol>
       <li>
         <%= f.label :name, :class => 'required' %>
@@ -29,6 +32,10 @@
       <li>
         <%= f.label :closes_on %>
         <%= f.date_select :closes_on %>
+      </li>
+      <li>
+        <%= f.label :locale %>
+        <%= f.select :locale, @shop.locales_for_select %>
       </li>
     </ol>
   </fieldset>
