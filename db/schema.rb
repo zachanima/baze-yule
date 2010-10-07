@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101005190007) do
+ActiveRecord::Schema.define(:version => 20101006212014) do
 
   create_table "product_templates", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20101005190007) do
     t.date     "closes_on"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "logo_file_name"
   end
 
 end

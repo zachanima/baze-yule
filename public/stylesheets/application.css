@@ -152,16 +152,17 @@ form td:nth-child(2) { /* name */
 
 
 
+
 /* form */
 
-form fieldset {
+fieldset {
   border: 1px solid #ccc;;
   border-width: 1px 0 0 0;
   margin-top: 16px;
   padding: 16px 0 0 0;
 }
 
-form legend {
+legend {
   display: none;
 }
 
@@ -175,24 +176,49 @@ form li {
   margin: 8px 0;
 }
 
-form label {
+label {
   display: block;
   float: left;
   margin-right: 12px;
-  padding-top: 3px;
+  padding-top: 4px;
   text-align: right;
   width: 200px;
 }
 
-form label.required:before {
+label.required:before {
   color: #f00;
   content: '* ';
 }
 
-form fieldset input[type=text], form fieldset textarea {
+fieldset input[type=text], textarea {
   width: 690px;
 }
 
-form fieldset input[type=submit] {
+textarea {
+  height: 4em;
+}
+
+fieldset input[type=submit] {
   margin-left: 212px;
+}
+
+
+
+/* tooltip */
+
+.tooltip {
+  border-bottom: 3px double #e82;
+  position: relative;
+}
+
+.tooltip div, .tooltip img {
+  display: none;
+}
+
+.tooltip:hover div, .tooltip:hover img {
+  border: 1px solid #ccc;
+  display: block;
+  margin-top: 5px;
+  max-width: 250px;
+  position: absolute;
 }
