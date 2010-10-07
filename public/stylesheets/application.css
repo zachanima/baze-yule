@@ -222,3 +222,17 @@ fieldset input[type=submit] {
   max-width: 250px;
   position: absolute;
 }
+
+
+
+/* form errors */
+form .error {
+  color: #f00;
+  display: block;
+  font-weight: bold;
+}
+
+.field_with_errors label {
+  color: #f00;
+  font-weight: bold;
+}

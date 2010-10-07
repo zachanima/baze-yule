@@ -1,9 +1,9 @@
 <%= form_for @shop, :html => { :multipart => true } do |f| %>
+  <% @shop.errors.full_messages.each do |message| %>
+    <span class="error"><%= message %>.</span>
+  <% end %>
   <fieldset>
     <legend>Fields for shop</legend>
-    <% [:name, :slug, :username_text, :password_text, :text, :opens_on, :closes_on, :locale].each do |field| %>
-      <%=raw "#{field.to_s.titleize} #{@shop.errors[field]}<br />"unless @shop.errors[field].blank? %>
-    <% end %>
     <ol>
       <li>
         <%= f.label :name, :class => 'required' %>
