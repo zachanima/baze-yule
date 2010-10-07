@@ -219,8 +219,8 @@ fieldset input[type=submit] {
   background-color: #fff;
   border: 1px solid #ccc;
   display: block;
-  margin-top: 5px;
-  padding: 8px;
+  margin: 6px;
+  padding: 6px 8px;
   position: absolute;
   z-index: 1;
 }
