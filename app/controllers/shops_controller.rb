@@ -5,7 +5,9 @@ class ShopsController < ApplicationController
     @shops = Shop.order(:name)
   end
 
-  # def show
+  def show
+    render :layout => 'shop'
+  end
 
   def new
     @shop = Shop.new
