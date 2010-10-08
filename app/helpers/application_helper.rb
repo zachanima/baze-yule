@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def tooltip(content, text)
+  def tooltip(content, text, attribute = :name)
     text = html_escape text unless text.html_safe? 
 
     ['<span class="tooltip">', text,
@@ -10,7 +10,7 @@ module ApplicationHelper
 
       # Collection
       elsif content.is_a? Array
-        ['<div>', html_escape(content.collect(&:name) * "\n"), '</div>'].join
+        ['<div>', html_escape(content.collect(&attribute) * "\n"), '</div>'].join
 
       end, '</span>'].join.html_safe unless content.blank?
   end
