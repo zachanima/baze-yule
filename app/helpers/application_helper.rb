@@ -12,6 +12,6 @@ module ApplicationHelper
       elsif content.is_a? Array
         ['<div>', html_escape(content.collect(&attribute) * "\n"), '</div>'].join
 
-      end, '</span>'].join.html_safe unless content.blank?
+      end, '</span>'].join.html_safe unless content.blank? or not content.exists?
   end
 end
