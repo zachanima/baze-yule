@@ -4,7 +4,7 @@ en:
   product:
     one: '1 product'
     other: '%{count} products'
-  options:
+  option:
     one: '1 option'
     other: '%{count} options'
 

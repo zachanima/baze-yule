@@ -12,6 +12,7 @@
         <th>Name</th>
         <th>Brand</th>
         <th>Identifier</th>
+        <th>Options</th>
         <th>Image</th>
         <th>Shop</th>
       </tr>
@@ -23,7 +24,8 @@
           <td><%= link_to product.name, edit_product_path(product) %></td>
           <td><%= product.brand %></td>
           <td><%= product.identifier %></td>
-          <td><%= tooltip(product.image, product.image_file_name) if product.image.exists? %></td>
+          <td><%= tooltip(product.option_groups, t('option', :count => product.option_groups.count), :text) %></td>
+          <td><%= tooltip(product.image, product.image_file_name) %></td>
           <td><%= product.shop.name %></td>
         </tr>
       <% end %>
