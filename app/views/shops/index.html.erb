@@ -9,16 +9,16 @@
     <thead>
       <tr>
         <th />
-        <th>Name</th>
-        <th>Slug</th>
-        <th>Logo</th>
-        <th>Username text</th>
-        <th>Password text</th>
+        <th><%= sortable 'name' %></th>
+        <th><%= sortable 'slug' %></th>
+        <th><%= sortable 'logo_file_name', 'Logo' %></th>
+        <th><%= sortable 'username_text' %></th>
+        <th><%= sortable 'password_text' %></th>
         <th>Users</th>
         <th>Products</th>
-        <th>Locale</th>
-        <th>Opens on</th>
-        <th>Closes on</th>
+        <th><%= sortable 'locale' %></th>
+        <th><%= sortable 'opens_on' %></th>
+        <th><%= sortable 'closes_on' %></th>
       </tr>
     </thead>
     <tbody>

@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
   before_filter :find_product, :only => [:show, :edit, :update]
+  helper_method :sort_column
 
   def index
-    @products = Product.order(:name)
+    @products = Product.order([sort_column, sort_direction] * ' ')
   end
 
   # def show
@@ -39,5 +40,9 @@ class ProductsController < ApplicationController
   private
   def find_product
     @product = Product.find(params[:id])
+  end
+
+  def sort_column
+    super(Product)
   end
 end

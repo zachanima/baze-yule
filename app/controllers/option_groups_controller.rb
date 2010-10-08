@@ -1,9 +1,10 @@
 class OptionGroupsController < ApplicationController
   before_filter :find_option_group, :only => [:edit, :update]
   before_filter :remove_empty_options, :only => [:create, :update]
+  helper_method :sort_column
 
   def index
-    @option_groups = OptionGroup.order(:text)
+    @option_groups = OptionGroup.order([sort_column, sort_direction] * ' ')
   end
 
   def new
@@ -38,6 +39,10 @@ class OptionGroupsController < ApplicationController
   private
   def find_option_group
     @option_group = OptionGroup.find(params[:id])
+  end
+
+  def sort_column
+    super(OptionGroup, :text)
   end
 
   def remove_empty_options

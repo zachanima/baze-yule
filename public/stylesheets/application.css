@@ -27,7 +27,7 @@ h1 {
 
 /* class-specific */
 
-body div.fixed-width {
+body .fixed-width {
   margin: auto;
   width: 950px;
 }
@@ -139,6 +139,14 @@ form th {
 
 form th, td {
   padding-left: 4px;
+}
+
+form th .asc:after { /* sortable */
+  content: '\25b2';
+}
+
+form th .desc:after { /* sortable */
+  content: '\25bc';
 }
 
 form th:first-child, form td:first-child { /* checkbox */

@@ -9,12 +9,12 @@
     <thead>
       <tr>
         <th />
-        <th>Name</th>
-        <th>Brand</th>
-        <th>Identifier</th>
+        <th><%= sortable 'name' %></th>
+        <th><%= sortable 'brand' %></th>
+        <th><%= sortable 'identifier' %></th>
         <th>Options</th>
-        <th>Image</th>
-        <th>Shop</th>
+        <th><%= sortable 'image_file_name', 'Image' %></th>
+        <th><%= sortable 'shop_id', 'Shop' %></th>
       </tr>
     </thead>
     <tbody>

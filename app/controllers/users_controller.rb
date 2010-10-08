@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   before_filter :find_user, :only => [:show, :edit, :update]
+  helper_method :sort_column
 
   def index
-    @users = User.order(:name)
+    @users = User.order([sort_column, sort_direction] * ' ')
   end
 
   # def show
@@ -39,5 +40,9 @@ class UsersController < ApplicationController
   private
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def sort_column
+    super(User)
   end
 end

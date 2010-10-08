@@ -1,4 +1,10 @@
 module ApplicationHelper
+  def sortable(column, title = column.titleize.capitalize)
+    css_class = column == sort_column ? "#{sort_direction}" : nil
+    direction = column == sort_column && sort_direction == 'asc' ? 'desc' : 'asc'
+    link_to title, { :sort => column, :direction => direction }, :class => css_class
+  end
+
   def tooltip(content, text, attribute = :name)
     text = html_escape text unless text.html_safe? 
 

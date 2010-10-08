@@ -1,8 +1,9 @@
 class ShopsController < ApplicationController
   before_filter :find_shop, :only => [:show, :edit, :update]
+  helper_method :sort_column
 
   def index
-    @shops = Shop.order(:name)
+    @shops = Shop.order([sort_column, sort_direction] * ' ')
   end
 
   def show
@@ -36,5 +37,9 @@ class ShopsController < ApplicationController
   private
   def find_shop
     @shop = Shop.find(params[:id])
+  end
+
+  def sort_column
+    super(Shop)
   end
 end
