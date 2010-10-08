@@ -10,10 +10,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101008012636) do
+ActiveRecord::Schema.define(:version => 20101008024322) do
 
   create_table "option_groups", :force => true do |t|
-    t.string   "name"
     t.string   "text"
     t.datetime "created_at"
     t.datetime "updated_at"

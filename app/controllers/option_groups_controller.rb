@@ -3,7 +3,7 @@ class OptionGroupsController < ApplicationController
   before_filter :remove_empty_options, :only => [:create, :update]
 
   def index
-    @option_groups = OptionGroup.order(:name)
+    @option_groups = OptionGroup.order(:text)
   end
 
   def new
