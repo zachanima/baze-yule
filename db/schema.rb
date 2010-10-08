@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101008024322) do
+ActiveRecord::Schema.define(:version => 20101008025404) do
 
   create_table "option_groups", :force => true do |t|
     t.string   "text"
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(:version => 20101008024322) do
     t.datetime "updated_at"
     t.string   "logo_file_name"
     t.string   "locale"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "username"
+    t.string   "password"
+    t.text     "department"
+    t.integer  "shop_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

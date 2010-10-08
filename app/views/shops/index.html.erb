@@ -14,6 +14,7 @@
         <th>Logo</th>
         <th>Username text</th>
         <th>Password text</th>
+        <th>Users</th>
         <th>Products</th>
         <th>Locale</th>
         <th>Opens on</th>
@@ -29,6 +30,7 @@
           <td><%= tooltip(shop.logo, shop.logo_file_name) %></td>
           <td><%= shop.username_text %></td>
           <td><%= shop.password_text %></td>
+          <td><%= t('user', :count => shop.users.count) unless shop.users.blank? %></td>
           <td><%= tooltip(shop.products, t('product', :count => shop.products.count)) %>
           <td><%= shop.locale_text %></td>
           <td><%= shop.opens_on.to_s(:short) %></td>

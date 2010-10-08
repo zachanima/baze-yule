@@ -1,0 +1,33 @@
+<%= form_for @user, :html => { :multipart => true } do |f| %>
+  <% @user.errors.full_messages.each do |message| %>
+    <span class="error"><%= message %>.</span>
+  <% end %>
+  <fieldset>
+    <legend>Fields for user</legend>
+    <ol>
+      <li>
+        <%= f.label :name, :class => 'required' %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :username, :class => 'required' %>
+        <%= f.text_field :username %>
+      </li>
+      <li>
+        <%= f.label :password %>
+        <%= f.text_field :password %>
+      </li>
+      <li>
+        <%= f.label :department %>
+        <%= f.text_field :department %>
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset>
+    <%= f.label :shop_id, :class => 'required' %>
+    <%= f.collection_select :shop_id, @shops, :id, :name %>
+  </fieldset>
+  <fieldset>
+    <%= f.submit %>
+  </fieldset>
+<% end %>

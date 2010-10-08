@@ -1,0 +1,32 @@
+<h1>List all users</h1>
+
+<%= form_tag do %>
+  <%= link_to 'New user', new_user_path %><br />
+  With selected:
+  <%= submit_tag 'Copy', :disabled => true %>
+  <%= submit_tag 'Delete', :disabled => true %>
+  <table>
+    <thead>
+      <tr>
+        <th />
+        <th>Name</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Department</th>
+        <th>Shop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= check_box_tag 'user_ids', user.id %></td>
+          <td><%= link_to user.name, edit_user_path(user) %></td>
+          <td><%= user.username %></td>
+          <td><%= user.password %></td>
+          <td><%= user.department %></td>
+          <td><%= user.shop.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
