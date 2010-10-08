@@ -4,6 +4,9 @@ en:
   product:
     one: '1 product'
     other: '%{count} products'
+  options:
+    one: '1 option'
+    other: '%{count} options'
 
   # Shop
   welcome: 'Welcome'

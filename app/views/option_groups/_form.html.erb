@@ -13,6 +13,16 @@
     </ol>
   </fieldset>
   <fieldset>
+    <%= f.fields_for :options, @option_group.options do |option_fields| %>
+      <%= option_fields.label :text, 'Option' %>
+      <%= option_fields.text_field :text %>
+    <% end %>
+    <%= f.fields_for :options, Option.new do |option_fields| %>
+      <%= option_fields.label :text, 'Option' %>
+      <%= option_fields.text_field :text %>
+    <% end %>
+  </fieldset>
+  <fieldset>
     <%= f.label :product_id %>
     <%= f.collection_select :product_id, @products, :id, :name, :include_blank => true %>
   </fieldset>

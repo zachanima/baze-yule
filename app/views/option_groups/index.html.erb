@@ -22,7 +22,7 @@
           <td><%= check_box_tag 'option_group_ids', option_group.id %></td>
           <td><%= link_to option_group.name, edit_option_group_path(option_group) %></td>
           <td><%= option_group.text %></td>
-          <td><%#= tooltip(option_group.options, t('option_group', :count => option_group.options.count) %></td>
+          <td><%= tooltip(option_group.options, t('options', :count => option_group.options.count), :text) %></td>
           <td><%= option_group.product.name if option_group.product %></td>
           <td><%= option_group.product.shop.name if option_group.product and option_group.product.shop %></td>
         </tr>
