@@ -1,0 +1,7 @@
+da:
+  welcome: 'Velkommen'
+  presents: 'Gaver'
+  logout: 'Log ud'
+  date:
+    formats:
+      default: '%d/%m %Y'

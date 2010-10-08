@@ -7,6 +7,7 @@ class ShopsController < ApplicationController
   end
 
   def show
+    I18n.locale = @shop.locale
     render :layout => 'shop'
   end
 
