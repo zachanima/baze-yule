@@ -11,7 +11,7 @@ body, input, textarea {
 }
 
 a {
-  color: #e82;
+  color: #c33;
 }
 
 a:hover {
@@ -56,7 +56,7 @@ body div.fixed-width {
 /* nav */
 
 #nav {
-  background-color: #e82;
+  background-color: #c33;
   border-top: 3px solid #fff;
   border-bottom: 3px solid #fff;
   padding-top: 4px;
@@ -78,7 +78,7 @@ body div.fixed-width {
 }
 
 #nav a {
-  background-color: #e82;
+  background-color: #c33;
   color: #fff;
   display: block;
   margin: -4px -16px -8px -16px;
@@ -96,8 +96,8 @@ body div.fixed-width {
 
 #content {
   background-color: #fff;
-  border-top: 5px solid #e82;
-  border-bottom: 1px solid #e82;
+  border-top: 5px solid #c33;
+  border-bottom: 1px solid #c33;
   margin-top: 16px;
   padding: 16px;
   width: 918px;
@@ -207,7 +207,7 @@ fieldset input[type=submit] {
 /* tooltip */
 
 .tooltip {
-  border-bottom: 3px double #e82;
+  border-bottom: 3px double #c33;
   position: relative;
 }
 
