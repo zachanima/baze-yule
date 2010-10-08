@@ -25,7 +25,7 @@
     <%= f.file_field :image %>
   </fieldset>
   <fieldset>
-    <%= f.label :shop %>
+    <%= f.label :shop_id %>
     <%= f.collection_select :shop_id, @shops, :id, :name, :include_blank => true %>
   </fieldset>
   <fieldset>
