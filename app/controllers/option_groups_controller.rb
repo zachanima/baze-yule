@@ -7,6 +7,7 @@ class OptionGroupsController < ApplicationController
 
   def new
     @option_group = OptionGroup.new
+    @products = Product.all
   end
 
   def create
@@ -19,7 +20,9 @@ class OptionGroupsController < ApplicationController
     end
   end
 
-  # def edit
+  def edit
+    @products = Product.all
+  end
 
   def update
     if @option_group.update_attributes(params[:option_group])

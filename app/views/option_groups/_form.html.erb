@@ -13,6 +13,10 @@
     </ol>
   </fieldset>
   <fieldset>
+    <%= f.label :product_id %>
+    <%= f.collection_select :product_id, @products, :id, :name, :include_blank => true %>
+  </fieldset>
+  <fieldset>
     <%= f.submit %>
   </fieldset>
 <% end %>
