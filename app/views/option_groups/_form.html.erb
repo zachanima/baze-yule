@@ -1,4 +1,7 @@
 <%= form_for @option_group do |f| %>
+  <% @option_group.errors.full_messages.each do |message| %>
+    <span class="error"><%= message %>.</span>
+  <% end %>
   <fieldset>
     <legend>Fields for option group</legend>
     <ol>
@@ -7,7 +10,7 @@
         <%= f.text_field :name %>
       </li>
       <li>
-        <%= f.label :text %>
+        <%= f.label :text, :class => 'required' %>
         <%= f.text_field :text %>
       </li>
     </ol>

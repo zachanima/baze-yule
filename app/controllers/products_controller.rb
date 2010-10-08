@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to products_path
     else
+      @shops = Shop.order(:name)
       render :action => :new
     end
   end
@@ -30,6 +31,7 @@ class ProductsController < ApplicationController
     if @product.update_attributes(params[:product])
       redirect_to products_path
     else
+      @shops = Shop.order(:name)
       render :action => :edit
     end
   end

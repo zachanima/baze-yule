@@ -1,4 +1,7 @@
 <%= form_for @product, :html => { :multipart => true } do |f| %>
+  <% @product.errors.full_messages.each do |message| %>
+    <span class="error"><%= message %>.</span>
+  <% end %>
   <fieldset>
     <legend>Fields for product</legend>
     <ol>

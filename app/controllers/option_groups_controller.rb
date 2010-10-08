@@ -15,12 +15,9 @@ class OptionGroupsController < ApplicationController
     @option_group = OptionGroup.new(params[:option_group])
 
     if @option_group.save
-      if params[:option_group][:options_attributes]['0']
-        #redirect_to edit_option_group_path(@option_group)
-      else
-        #redirect_to option_groups_path
-      end
+      redirect_to option_groups_path
     else
+      @products = Product.all
       render :action => :new
     end
   end
@@ -33,6 +30,7 @@ class OptionGroupsController < ApplicationController
     if @option_group.update_attributes(params[:option_group])
       redirect_to option_groups_path
     else
+      @products = Product.all
       render :action => :edit
     end
   end
