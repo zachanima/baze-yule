@@ -43,15 +43,16 @@ h1 {
 
 #nav li {
   background-color: #fff;
-  display: inline-block;
+  display: inline;
   font-weight: bold;
-  padding: 8px 16px 8px 16px;
+  padding: 8px 16px 9px 16px;
 }
 
 #nav a {
   background-color: #666;
   color: #fff;
-  margin: -8px -16px -8px -16px;
+  display: inline-block;
+  margin: 0 -16px;
   padding: 8px 16px 8px 16px;
   text-decoration: none;
 }
@@ -107,6 +108,7 @@ h1 {
 }
 
 .product_index img {
+  border-width: 0;
   display: block;
   margin: 0 auto 8px auto;
 }
@@ -144,8 +146,8 @@ h1 {
 /* css3 */
 
 #content {
-  border-top-left-radius:      16px;
-  -moz-border-top-left-radius: 16px;
+  border-radius:      16px 0 0 0;
+  -moz-border-radius: 16px 0 0 0;
   -moz-box-shadow:    0 0 16px black;
   -webkit-box-shadow: 0 0 16px black;
   z-index: 1;
