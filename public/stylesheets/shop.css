@@ -113,6 +113,33 @@ h1 {
 
 
 
+/* product show */
+#product {
+  padding-left: 332px;
+}
+
+#product h1 {
+  border-bottom: 1px solid #555;
+  font: normal 24pt georgia, serif;
+  margin-top: 0;
+  text-align: left;
+}
+
+#product img {
+  border: 3px solid #fff;
+  float: left;
+  margin-left: -332px;
+  padding: 4px;
+}
+
+#product a:hover img {
+  border-color: #999;
+}
+
+
+
+
+
 
 /* css3 */
 
@@ -139,5 +166,13 @@ h1 {
 }
 
 .product_index a:hover img {
+  opacity: 0.75;
+}
+
+#product h1 {
+  text-shadow: 1px 1px 1px #999;
+}
+
+#product a:hover img {
   opacity: 0.75;
 }

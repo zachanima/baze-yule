@@ -13,7 +13,9 @@ class ProductsController < ApplicationController
     end
   end
 
-  # def show
+  def show
+    render :layout => 'shop'
+  end
 
   def new
     @product = Product.new

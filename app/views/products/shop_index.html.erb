@@ -2,7 +2,7 @@
   <tr>
   <% @products.each do |product| %>
       <td>
-        <% link_to product do %>
+        <% link_to shop_product_path(@shop, product) do %>
           <%= image_tag(product.image.url(:thumb)) %>
           <%= product.name %>
         <% end %>
