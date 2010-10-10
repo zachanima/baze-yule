@@ -83,6 +83,37 @@ h1 {
 
 
 
+/* product index */
+
+.product_index {
+  border-spacing: 16px;
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+}
+
+.product_index td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.product_index a {
+  color: #333;
+  text-decoration: none;
+}
+
+.product_index a:hover {
+  color: #999;
+}
+
+.product_index img {
+  display: block;
+  margin: 0 auto 8px auto;
+}
+
+
+
+
 /* css3 */
 
 #content {
@@ -98,4 +129,15 @@ h1 {
   -moz-border-radius: 0 0 16px 16px;
   -moz-box-shadow:    0 0 16px black;
   -webkit-box-shadow: 0 0 16px black;
+}
+
+.product_index td {
+  border-radius:      16px;
+  -moz-border-radius: 16px;
+  -moz-box-shadow:    0 0 16px black;
+  -webkit-box-shadow: 0 0 16px black;
+}
+
+.product_index a:hover img {
+  opacity: 0.75;
 }

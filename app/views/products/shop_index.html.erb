@@ -1,0 +1,13 @@
+<table class="product_index">
+  <tr>
+  <% @products.each do |product| %>
+      <td>
+        <% link_to product do %>
+          <%= image_tag(product.image.url(:thumb)) %>
+          <%= product.name %>
+        <% end %>
+      </td>
+    <%=raw cycle('', '', '</tr><tr>') %>
+  <% end %>
+  </tr>
+</table>

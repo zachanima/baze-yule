@@ -17,7 +17,7 @@
   <div id="nav">
     <ul>
       <li><%= link_to_unless_current t('welcome'), @shop %></li>
-      <li><%= link_to_unless_current t('presents'), products_path %></li>
+      <li><%= link_to_unless_current t('presents'), shop_products_path(@shop) %></li>
       <li><%= link_to_unless_current t('logout'), shops_path %></li>
     </ul>
   </div>
