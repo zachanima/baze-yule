@@ -23,6 +23,9 @@
   </div>
 
   <div id="content">
+    <% flash.each do |name, message| %>
+      <%= content_tag :span, message, :id => "flash_#{name}" %>
+    <% end %>
     <%= yield %>
   </div>
 
