@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate_admin, :except => [:index, :show]
   before_filter :authenticate_user!, :only => [:show]
   before_filter :find_product, :only => [:show, :edit, :update]
   helper_method :sort_column
@@ -10,6 +11,7 @@ class ProductsController < ApplicationController
       @products = @shop.products
       render :action => 'shop_index', :layout => 'shop'
     else
+      basic_authenticate
       @products = Product.order([sort_column, sort_direction] * ' ')
     end
   end

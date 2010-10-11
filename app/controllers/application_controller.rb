@@ -27,4 +27,11 @@ class ApplicationController < ActionController::Base
   def find_shop
     @shop = Shop.find_by_id(params[:shop_id] || params[:id])
   end
+
+  def authenticate_admin
+    authenticate_or_request_with_http_basic do |login, password|
+      login == 'os' && password == 'secret'
+    end
+    warden.custom_failure! if performed?
+  end
 end

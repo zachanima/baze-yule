@@ -1,4 +1,5 @@
 class OptionGroupsController < ApplicationController
+  before_filter :authenticate_admin
   before_filter :find_option_group, :only => [:edit, :update]
   before_filter :remove_empty_options, :only => [:create, :update]
   helper_method :sort_column

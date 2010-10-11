@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_admin
   before_filter :find_user, :only => [:show, :edit, :update]
   helper_method :sort_column
 
