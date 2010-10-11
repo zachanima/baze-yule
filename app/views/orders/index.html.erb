@@ -1,0 +1,28 @@
+<h1>List all orders</h1>
+
+<%= form_tag do %>
+  <%= link_to 'New order', new_product_path %><br />
+  With selected:
+  <%= submit_tag 'Copy', :disabled => true %>
+  <%= submit_tag 'Delete', :disabled => true %>
+  <table>
+    <thead>
+      <tr>
+        <th />
+        <th>ID</th>
+        <th>User</th>
+        <th>Product</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= check_box_tag 'order_ids', order.id %></td>
+          <td>#<%= order.id %></td>
+          <td><%= order.user.name %></td>
+          <td><%= order.product.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

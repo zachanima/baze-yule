@@ -13,9 +13,13 @@ en:
 
   # Shop
   login: 'Log in'
+
   welcome: 'Welcome'
   presents: 'Presents'
   logout: 'Log out'
+
+  place_order: 'Place order'
+
   date:
     formats:
       default: '%B %e, %Y'

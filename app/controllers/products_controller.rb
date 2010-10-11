@@ -17,6 +17,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    I18n.locale = @shop.locale
+    @order = @product.orders.new
     render :layout => 'shop'
   end
 

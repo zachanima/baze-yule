@@ -1,8 +1,11 @@
 Yule::Application.routes.draw do
   resources :option_groups
+  resources :orders
   resources :products
   resources :shops do
-    resources :products
+    resources :products do
+      resources :orders
+    end
     member do
       devise_for :users
     end

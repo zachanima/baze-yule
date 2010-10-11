@@ -2,4 +2,9 @@
   <%= link_to image_tag(@product.image.url(:medium)), @product.image.url %>
   <h1><%= @product.name %></h1>
   <%= @product.text %>
+  <%= form_for [@shop, @product, @order] do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :product_id, :value => @product.id %>
+    <%= f.submit t('place_order') %>
+  <% end %>
 </div>
