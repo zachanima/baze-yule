@@ -4,5 +4,5 @@
 <p>Dit valg af gave kan ændres til og med <em><%= l(@shop.closes_on) %></em>.</p>
 <p>Du vil stadig have mulighed for at logge ind og se dit endelige gavevalg, efter shoppen er lukket.</p>
 <% if current_user.orders.count > 0 %>
-  <span class="choice">Til din orientering har du tidligere valgt <%= link_to current_user.orders.last.product.name, current_user.orders.last.product %>.</span>
+  <span class="choice">Til din orientering har du tidligere valgt <%= link_to current_user.orders.last.product.name, shop_product_path(current_user.orders.last.product) %>.</span>
 <% end %>
