@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :sort_direction
   before_filter :find_shop
+  layout :layout_by_resource
+
+  def layout_by_resource
+    devise_controller? ? 'shop' : 'application'
+  end
 
   private
   def sort_column(klass, default = :name)

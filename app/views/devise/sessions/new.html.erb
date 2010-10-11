@@ -1,0 +1,17 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <fieldset>
+    <ol>
+      <li>
+        <%= f.label :username, @shop.username_text %>
+        <%= f.text_field :username %>
+      </li>
+      <li>
+        <%= f.label :password, @shop.password_text %>
+        <%= f.password_field :password %>
+      </li>
+    </ol>
+    <%= f.submit t('login') %>
+  </fieldset>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

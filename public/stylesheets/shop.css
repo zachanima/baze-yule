@@ -75,12 +75,54 @@ h1 {
 
 
 
+/* flash */
+
+#flash_alert, #flash_notice {
+  display: none;
+}
+
+
+
 /* footer */
 
 #footer {
   background: url('/images/footer.png') top;
   height: 100px;
 }
+
+
+
+/* form */
+
+fieldset {
+  border-width: 0;
+  margin: 80px auto 0 auto;
+  text-align: right;
+  width: 450px;
+}
+
+fieldset ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+fieldset li {
+  margin-bottom: 8px;
+}
+
+label {
+  float: left;
+  margin-top: 3px;
+  text-align: left;
+}
+
+input {
+}
+
+li input {
+  width: 200px;
+}
+
 
 
 

@@ -12,6 +12,7 @@ en:
     other: '%{count} options'
 
   # Shop
+  login: 'Log in'
   welcome: 'Welcome'
   presents: 'Presents'
   logout: 'Log out'

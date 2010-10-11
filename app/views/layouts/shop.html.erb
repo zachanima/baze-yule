@@ -14,13 +14,15 @@
     <% end %>
   </div>
 
-  <div id="nav">
-    <ul>
-      <li><%= link_to_unless_current t('welcome'), @shop %></li>
-      <li><%= link_to_unless_current t('presents'), shop_products_path(@shop) %></li>
-      <li><%= link_to_unless_current t('logout'), shops_path %></li>
-    </ul>
-  </div>
+  <% if user_signed_in? %>
+    <div id="nav">
+      <ul>
+        <li><%= link_to_unless_current t('welcome'), @shop %></li>
+        <li><%= link_to_unless_current t('presents'), shop_products_path(@shop) %></li>
+        <li><%= link_to_unless_current t('logout'), destroy_user_session_path(@shop) %></li>
+      </ul>
+    </div>
+  <% end %>
 
   <div id="content">
     <% flash.each do |name, message| %>

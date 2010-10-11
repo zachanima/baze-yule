@@ -1,9 +1,11 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:show]
   before_filter :find_product, :only => [:show, :edit, :update]
   helper_method :sort_column
 
   def index
     if @shop
+      authenticate_user!
       I18n.locale = @shop.locale
       @products = @shop.products
       render :action => 'shop_index', :layout => 'shop'

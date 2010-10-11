@@ -1,4 +1,5 @@
 da:
+  login: 'Log ind'
   welcome: 'Velkommen'
   presents: 'Gaver'
   logout: 'Log ud'
