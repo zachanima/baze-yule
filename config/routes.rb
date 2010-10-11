@@ -16,5 +16,6 @@ Yule::Application.routes.draw do
       post :import
     end
   end
+  match '/:id', :to => 'shops#show'
   root :to => 'shops#index'
 end
