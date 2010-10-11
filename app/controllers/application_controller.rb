@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def after_sign_out_path_for(resource)
+    shop_path(params[:id])
+  end
+
   private
   def sort_column(klass, default = :name)
     klass.column_names.include?(params[:sort]) ? params[:sort] : default
