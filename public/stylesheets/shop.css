@@ -202,6 +202,10 @@ li input {
   border-color: #999;
 }
 
+#product div {
+  white-space: pre;
+}
+
 
 
 
