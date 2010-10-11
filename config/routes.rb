@@ -5,4 +5,5 @@ Yule::Application.routes.draw do
     resources :products
   end
   resources :users
+  root :to => 'shops#index'
 end
