@@ -3,6 +3,14 @@
   <h1><%= @product.name %></h1>
   <%= @product.text %>
   <%= form_for [@shop, @product, @order] do |f| %>
+    <% @product.option_groups.each do |option_group| %>
+      <%= f.label option_group.text %>
+      <select name="order[option_ids][]">
+        <% option_group.options.each do |option| %>
+          <option value="<%= option.id %>"><%= option.text %></option>
+        <% end %>
+      </select><br />
+    <% end %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :product_id, :value => @product.id %>
     <%= f.submit t('place_order') %>

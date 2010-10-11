@@ -10,8 +10,10 @@
       <tr>
         <th />
         <th>ID</th>
-        <th>User</th>
         <th>Product</th>
+        <th>Options</th>
+        <th>User</th>
+        <th>Shop</th>
       </tr>
     </thead>
     <tbody>
@@ -19,8 +21,10 @@
         <tr>
           <td><%= check_box_tag 'order_ids', order.id %></td>
           <td>#<%= order.id %></td>
-          <td><%= order.user.name %></td>
           <td><%= order.product.name %></td>
+          <td><%= tooltip(order.options, t('option', :count => order.options.count), :text) %></td>
+          <td><%= order.user.name %></td>
+          <td><%= order.user.shop.name %></td>
         </tr>
       <% end %>
     </tbody>
