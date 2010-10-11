@@ -26,7 +26,7 @@
         <tr>
           <td><%= check_box_tag 'shop_ids', shop.id %></td>
           <td><%= link_to shop.name, edit_shop_path(shop) %></td>
-          <td><%= link_to shop.slug, shop %></td>
+          <td><%= link_to shop.slug, "/#{shop.slug}" %></td>
           <td><%= tooltip(shop.logo, shop.logo_file_name) %></td>
           <td><%= shop.username_text %></td>
           <td><%= shop.password_text %></td>
