@@ -36,10 +36,6 @@ class ShopsController < ApplicationController
   end
 
   private
-  def find_shop
-    @shop = Shop.find(params[:id])
-  end
-
   def sort_column
     super(Shop)
   end

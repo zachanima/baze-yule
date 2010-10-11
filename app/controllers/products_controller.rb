@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   before_filter :find_product, :only => [:show, :edit, :update]
-  before_filter :find_shop, :only => [:index, :show]
   helper_method :sort_column
 
   def index
@@ -49,10 +48,6 @@ class ProductsController < ApplicationController
   private
   def find_product
     @product = Product.find(params[:id])
-  end
-
-  def find_shop
-    @shop = Shop.find_by_id(params[:shop_id])
   end
 
   def sort_column
