@@ -12,7 +12,11 @@ module ApplicationHelper
 
       # Paperclip
       if content.is_a? Paperclip::Attachment
-        ['<img src="', content.url(:thumb), '" />'].join
+        if content.styles.include? :thumb
+          ['<img src="', content.url(:thumb), '" />'].join
+        else
+          ['<img src="', content, '" />'].join
+        end
 
       # Collection
       elsif content.is_a? Array
