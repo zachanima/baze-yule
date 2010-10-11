@@ -7,6 +7,11 @@ Yule::Application.routes.draw do
       devise_for :users
     end
   end
-  resources :users
+  resources :users do
+    collection do
+      post :upload
+      post :import
+    end
+  end
   root :to => 'shops#index'
 end

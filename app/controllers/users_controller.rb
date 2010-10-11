@@ -1,3 +1,5 @@
+require 'csv'
+
 class UsersController < ApplicationController
   before_filter :authenticate_admin
   before_filter :find_user, :only => [:show, :edit, :update]
@@ -36,6 +38,33 @@ class UsersController < ApplicationController
       @shops = Shop.order(:name)
       render :action => :edit
     end
+  end
+
+  def upload
+    @users = CSV.parse(params[:file].read)
+    @columns = 0
+    @users.each do |user|
+      @columns = user.count if user.count > @columns
+    end
+    @shops = Shop.all
+  end
+
+  def import
+    fields = params[:fields]
+    params[:rows].each do |row|
+      user = Hash.new
+      params[:attributes][row].each_key do |key|
+        unless fields[key].empty?
+          if user[fields[key].to_sym].nil?
+            user[fields[key].to_sym] = params[:attributes][row][key]
+          else
+            user[fields[key].to_sym] += "\r\n" + params[:attributes][row][key]
+          end
+        end
+      end
+      Shop.find(1).users.create(user) # Needs immediate fix!
+    end
+    redirect_to users_path
   end
 
   private
