@@ -15,6 +15,14 @@ h1 {
   text-align: center;
 }
 
+a {
+  color: #000;
+}
+
+a:hover {
+  color: #666;
+}
+
 
 
 /* header */
@@ -127,6 +135,16 @@ li input {
   width: 200px;
 }
 
+
+
+/* shop show */
+
+.choice {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  display: block;
+  padding: 8px 12px;
+}
 
 
 
