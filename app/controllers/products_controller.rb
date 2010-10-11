@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
       @products = @shop.products
       render :action => 'shop_index', :layout => 'shop'
     else
-      basic_authenticate
+      authenticate_admin
       @products = Product.order([sort_column, sort_direction] * ' ')
     end
   end
