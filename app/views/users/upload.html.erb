@@ -1,5 +1,17 @@
 <%= form_tag import_users_path do %>
   <fieldset>
+    <%= label_tag :shop_id, 'Shop', :class => 'required' %>
+    <%= collection_select :user, :shop_id, @shops, :id, :name, :include_blank => true %>
+  </fieldset>
+  <fieldset>
+    <ol>
+      <li>
+        <%= label_tag :password, 'Shared password' %>
+        <%= text_field :user, :password %>
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset>
     <table>
       <thead>
         <tr>

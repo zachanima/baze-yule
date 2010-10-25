@@ -49,10 +49,12 @@ class UsersController < ApplicationController
     @shops = Shop.all
   end
 
-  def import
+  def import # Needs validation
     fields = params[:fields]
     params[:rows].each do |row|
       user = Hash.new
+      user[:shop_id]  = params[:user][:shop_id]
+      user[:password] = params[:user][:password]
       params[:attributes][row].each_key do |key|
         unless fields[key].empty?
           if user[fields[key].to_sym].nil?
@@ -62,7 +64,7 @@ class UsersController < ApplicationController
           end
         end
       end
-      Shop.find(1).users.create(user) # Needs immediate fix!
+      User.create(user)
     end
     redirect_to users_path
   end
