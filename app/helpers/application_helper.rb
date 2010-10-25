@@ -5,23 +5,31 @@ module ApplicationHelper
     link_to title, { :sort => column, :direction => direction }, :class => css_class
   end
 
-  def tooltip(content, text, attribute = :name)
+  def tooltip(content, text, attribute = :name, show_empty = false)
     text = html_escape text unless text.html_safe? 
 
-    ['<span class="tooltip">', text,
+    if content.blank? or (content.respond_to? :exists? and not content.exists?)
+      show_empty ? text : nil
+    else
+      ['<span class="tooltip">', text,
 
-      # Paperclip
-      if content.is_a? Paperclip::Attachment
-        if content.styles.include? :thumb
-          ['<img src="', content.url(:thumb), '" />'].join
+        # Paperclip
+        if content.is_a? Paperclip::Attachment
+          if content.styles.include? :thumb
+            ['<img src="', content.url(:thumb), '" />'].join
+          else
+            ['<img src="', content, '" />'].join
+          end
+
+        # Collection
+        elsif content.is_a? Array
+          ['<div>', html_escape(content.collect(&attribute) * "\n"), '</div>'].join
+
+        # Other
         else
-          ['<img src="', content, '" />'].join
-        end
+          ['<div>', html_escape(content.to_s), '</div>'].join
 
-      # Collection
-      elsif content.is_a? Array
-        ['<div>', html_escape(content.collect(&attribute) * "\n"), '</div>'].join
-
-      end, '</span>'].join.html_safe unless content.blank? or not content.exists?
+        end, '</span>'].join.html_safe
+    end
   end
 end
