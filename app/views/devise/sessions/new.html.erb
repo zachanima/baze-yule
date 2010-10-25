@@ -6,7 +6,7 @@
         <%= f.text_field :username %>
       </li>
       <li>
-        <%= f.label :password, @shop.password_text %>
+        <%= f.label :password, @shop.password_text.blank? ? t('password') : @shop.password_text %>
         <%= f.password_field :password %>
       </li>
     </ol>

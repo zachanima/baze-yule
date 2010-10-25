@@ -12,6 +12,8 @@ en:
     other: '%{count} options'
 
   # Shop
+  username: 'Username'
+  password: 'Password'
   login: 'Log in'
 
   welcome: 'Welcome'

@@ -1,4 +1,6 @@
 da:
+  username: 'Brugernavn'
+  password: 'Adgangskode'
   login: 'Log ind'
 
   welcome: 'Velkommen'
