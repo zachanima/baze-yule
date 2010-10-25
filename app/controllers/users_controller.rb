@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def index
     if @shop
-      @users = @shop.users.sort { |a,b| a.orders.count <=> b.orders.count }
+      @users = @shop.users.order([sort_column, sort_direction] * ' ').sort { |a,b| a.orders.count <=> b.orders.count }
     else
       @users = User.order([sort_column, sort_direction] * ' ')
     end
