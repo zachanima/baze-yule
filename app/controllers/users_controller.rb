@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   helper_method :sort_column
 
   def index
-    @users = User.order([sort_column, sort_direction] * ' ')
+    if @shop
+      @users = @shop.users.sort { |a,b| a.orders.count <=> b.orders.count }
+    else
+      @users = User.order([sort_column, sort_direction] * ' ')
+    end
   end
 
   # def show

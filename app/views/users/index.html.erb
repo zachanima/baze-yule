@@ -12,6 +12,7 @@
       <tr>
         <th />
         <th><%= sortable 'name' %></th>
+        <th>Order</th>
         <th><%= sortable 'username' %></th>
         <th><%= sortable 'password' %></th>
         <th><%= sortable 'department' %></th>
@@ -23,6 +24,11 @@
         <tr>
           <td><%= check_box_tag 'user_ids', user.id %></td>
           <td><%= link_to user.name, edit_user_path(user) %></td>
+          <td>
+            <% if user.orders.last %>
+              <%= tooltip(user.orders.last.options, user.orders.last.product.name, :text, true) %>
+            <% end %>
+          </td>
           <td><%= user.username %></td>
           <td><%= user.password %></td>
           <td><%= user.department %></td>

@@ -9,6 +9,7 @@ Yule::Application.routes.draw do
     member do
       devise_for :users
     end
+    resources :users
   end
   resources :users do
     collection do
