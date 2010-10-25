@@ -1,4 +1,4 @@
-<h1>List all users</h1>
+<h1>List <%= @shop ? "users of #{@shop.name}" : 'all users' %></h1>
 
 <%= form_tag upload_users_path, :multipart => true do %>
   <%= link_to 'New user', new_user_path %><br />
