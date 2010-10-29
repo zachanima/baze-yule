@@ -54,11 +54,15 @@ class UsersController < ApplicationController
   end
 
   def import # Needs validation
+    transforms = params[:transforms]
     fields = params[:fields]
     params[:rows].each do |row|
       user = Hash.new
       params[:attributes][row].each_key do |key|
         unless fields[key].empty?
+          unless transforms[key].empty?
+            params[:attributes][row][key] = params[:attributes][row][key].send(transforms[key].to_sym)
+          end
           if user[fields[key].to_sym].nil?
             user[fields[key].to_sym] = params[:attributes][row][key]
           else

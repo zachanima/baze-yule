@@ -22,6 +22,12 @@
         <tr>
           <th></th>
           <% (0...@columns).each do |i| %>
+            <th><%= select_tag("transforms[#{i}]", transforms_for_import) %></th>
+          <% end %>
+        </tr>
+        <tr>
+          <th></th>
+          <% (0...@columns).each do |i| %>
             <th><%= select_tag("fields[#{i}]", attributes_for_import) %></th>
           <% end %>
         </tr>
