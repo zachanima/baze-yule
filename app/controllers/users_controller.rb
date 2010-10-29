@@ -57,8 +57,6 @@ class UsersController < ApplicationController
     fields = params[:fields]
     params[:rows].each do |row|
       user = Hash.new
-      user[:shop_id]  = params[:user][:shop_id]
-      user[:password] = params[:user][:password]
       params[:attributes][row].each_key do |key|
         unless fields[key].empty?
           if user[fields[key].to_sym].nil?
@@ -68,6 +66,8 @@ class UsersController < ApplicationController
           end
         end
       end
+      user[:shop_id]  = params[:user][:shop_id]
+      user[:password] = params[:user][:password] if user[:password].nil?
       User.create(user)
     end
     redirect_to users_path
