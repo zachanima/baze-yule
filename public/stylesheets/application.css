@@ -158,6 +158,9 @@ form td:nth-child(2) { /* name */
   font-weight: bold;
 }
 
+form table.upload {
+  font-size: 8pt;
+}
 
 
 
