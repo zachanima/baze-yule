@@ -15,7 +15,7 @@
     <table class="upload">
       <thead>
         <tr>
-          <th class="checkbox"><input class="checkbox" id="check_all" onclick="$$('form input.checkbox').each(function(box){box.checked=$('check_all').checked})" type="checkbox"></th>
+          <th></th>
           <% (0...@columns).each do |i| %>
             <th><%= select_tag("fields[#{i}]", attributes_for_import) %></th>
           <% end %>

@@ -161,6 +161,9 @@ form td:nth-child(2) { /* name */
 form table.upload {
   font-size: 8pt;
 }
+form table.upload th {
+  padding-left: 0;
+}
 
 
 
