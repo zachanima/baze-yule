@@ -1,8 +1,9 @@
 module UsersHelper
   def attributes_for_import
-    options = [:name, :username, :password, :department].collect do |attr|
-      [attr, attr]
-    end
-    options_for_select(options.unshift(['', '']))
+    array_for_select([:name, :username, :password, :department])
   end
+
+  def transforms_for_import
+    array_for_select([:upcase, :downcase, :titleize])
+  end 
 end

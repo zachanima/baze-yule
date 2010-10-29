@@ -5,6 +5,13 @@ module ApplicationHelper
     link_to title, { :sort => column, :direction => direction }, :class => css_class
   end
 
+  def array_for_select(array)
+    options = array.collect do |attr|
+      [attr, attr]
+    end
+    options_for_select(options.unshift(['', '']))
+  end
+
   def tooltip(content, text, attribute = :name, show_empty = false)
     text = html_escape text unless text.html_safe? 
 
