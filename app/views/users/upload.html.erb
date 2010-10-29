@@ -25,7 +25,7 @@
       <% x = 0 %>
       <% y = 0 %>
       <% @users.each do |attributes| %>
-        <% if attributes.count > 0 %>
+        <% if attributes.reject(&:blank?).count > 0 %>
           <tr class="<%= cycle('odd', 'even') %>">
             <td class="checkbox"><%= check_box_tag('rows[]', y, y != 0, :class => 'checkbox') %></td>
             <% attributes.each do |attribute| %>
