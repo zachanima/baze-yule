@@ -3,6 +3,10 @@
     <span class="error"><%= message %>.</span>
   <% end %>
   <fieldset>
+    <%= f.label :shop_id, :class => 'required' %>
+    <%= f.collection_select :shop_id, @shops, :id, :name %>
+  </fieldset>
+  <fieldset>
     <legend>Fields for user</legend>
     <ol>
       <li>
@@ -22,10 +26,6 @@
         <%= f.text_field :department %>
       </li>
     </ol>
-  </fieldset>
-  <fieldset>
-    <%= f.label :shop_id, :class => 'required' %>
-    <%= f.collection_select :shop_id, @shops, :id, :name %>
   </fieldset>
   <fieldset>
     <%= f.submit %>
