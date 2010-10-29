@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username, :scope => :shop_id
 
   devise :database_authenticatable, :trackable
+
+  def before_save
+    self.plaintext_password = self.password
+  end
 end

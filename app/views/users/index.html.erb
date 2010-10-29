@@ -14,7 +14,7 @@
         <th><%= sortable 'name' %></th>
         <th>Order</th>
         <th><%= sortable 'username' %></th>
-        <th><%= sortable 'password' %></th>
+        <th><%= sortable 'plaintext_password', 'Password' %></th>
         <th><%= sortable 'department' %></th>
         <th><%= sortable 'shop_id', 'Shop' %></th>
       </tr>
@@ -30,7 +30,7 @@
             <% end %>
           </td>
           <td><%= user.username %></td>
-          <td><%= user.password %></td>
+          <td><%= user.plaintext_password %></td>
           <td><%= user.department %></td>
           <td><%= user.shop.name %></td>
         </tr>
