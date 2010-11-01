@@ -27,7 +27,7 @@ See orders for:
               <%= order[:options][i].text %>
             <% end %>
             </td>
-          <% end %>
+          <% end if @option_groups_count %>
           <td><%= order[:count] %></td>
         </tr>
       <% end %>
@@ -63,7 +63,7 @@ See orders for:
               <%= order.options[i].text %>
             <% end %>
             </td>
-          <% end %>
+          <% end if @option_groups_count %>
           <% if order.user and not @shop %>
             <td><%= order.user.shop.name %></td>
           <% end %>
