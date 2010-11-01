@@ -3,6 +3,7 @@ Yule::Application.routes.draw do
   resources :orders
   resources :products
   resources :shops do
+    resources :orders
     resources :products do
       resources :orders
     end

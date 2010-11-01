@@ -1,7 +1,36 @@
-<h1>List all orders</h1>
+<h1>List <%= @shop ? "orders of #{@shop.name}" : 'all orders' %></h1>
+
+<form>
+  <table>
+    <thead>
+      <tr>
+        <th />
+        <th>Product</th>
+        <th colspan="<%= @option_groups_count %>">Options</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @unique_orders.each do |order| %>
+        <tr>
+          <th />
+          <td><%= order[:product].name %></td>
+          <% @option_groups_count.times do |i| %>
+            <td>
+            <% if order[:options].count >= i %>
+              <%= order[:options][i].option_group.text %>:
+              <%= order[:options][i].text %>
+            <% end %>
+            </td>
+          <% end %>
+          <td><%= order[:count] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</form>
 
 <%= form_tag do %>
-  <%= link_to 'New order', new_product_path %><br />
   With selected:
   <%= submit_tag 'Copy', :disabled => true %>
   <%= submit_tag 'Delete', :disabled => true %>
@@ -9,22 +38,31 @@
     <thead>
       <tr>
         <th />
-        <th>ID</th>
         <th>Product</th>
-        <th>Options</th>
+        <th colspan="<%= @option_groups_count %>">Options</th>
+        <% unless @shop %>
+          <th>Shop</th>
+        <% end %>
         <th>User</th>
-        <th>Shop</th>
       </tr>
     </thead>
     <tbody>
       <% @orders.each do |order| %>
         <tr>
           <td><%= check_box_tag 'order_ids', order.id %></td>
-          <td>#<%= order.id %></td>
           <td><%= order.product.name %></td>
-          <td><%= tooltip(order.options, t('option', :count => order.options.count), :text) %></td>
+          <% @option_groups_count.times do |i| %>
+            <td>
+            <% if order.options.count >= i %>
+              <%= order.options[i].option_group.text %>:
+              <%= order.options[i].text %>
+            <% end %>
+            </td>
+          <% end %>
+          <% if order.user and not @shop %>
+            <td><%= order.user.shop.name %></td>
+          <% end %>
           <td><%= order.user.name if order.user %></td>
-          <td><%= order.user.shop.name if order.user %></td>
         </tr>
       <% end %>
     </tbody>
