@@ -17,7 +17,7 @@
           <td><%= order[:product].name %></td>
           <% @option_groups_count.times do |i| %>
             <td>
-            <% if order[:options].count >= i %>
+            <% if order[:options].count > i %>
               <%= order[:options][i].option_group.text %>:
               <%= order[:options][i].text %>
             <% end %>
