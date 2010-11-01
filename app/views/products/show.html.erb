@@ -4,7 +4,7 @@
   <div><%= @product.text %></div>
   <%= form_for [@shop, @product, @order] do |f| %>
     <% @product.option_groups.each do |option_group| %>
-      <%= f.label option_group.text %>
+      <%= f.label option_group.text, option_group.text %>
       <select name="order[option_ids][]">
         <% option_group.options.each do |option| %>
           <option value="<%= option.id %>"><%= option.text %></option>
