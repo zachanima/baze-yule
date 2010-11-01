@@ -23,8 +23,8 @@
           <td>#<%= order.id %></td>
           <td><%= order.product.name %></td>
           <td><%= tooltip(order.options, t('option', :count => order.options.count), :text) %></td>
-          <td><%= order.user.name %></td>
-          <td><%= order.user.shop.name %></td>
+          <td><%= order.user.name if order.user %></td>
+          <td><%= order.user.shop.name if order.user %></td>
         </tr>
       <% end %>
     </tbody>
