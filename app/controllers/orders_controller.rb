@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_filter :authenticate_admin, :only => [:index]
-  before_filter :authenticate_user!, :except => [:index]
+  before_filter :certify_user!, :except => [:index]
 
   def index
     @orders = Order.all

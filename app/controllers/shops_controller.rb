@@ -1,7 +1,7 @@
 class ShopsController < ApplicationController
   before_filter :authenticate_admin, :except => [:show]
-  before_filter :authenticate_user!, :only => [:show]
   before_filter :find_shop, :only => [:show, :edit, :update]
+  before_filter :certify_user!, :only => [:show]
   helper_method :sort_column
 
   def index

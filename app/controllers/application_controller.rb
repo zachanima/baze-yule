@@ -39,4 +39,17 @@ class ApplicationController < ActionController::Base
     end
     warden.custom_failure! if performed?
   end
+
+  def certify_user!
+    authenticate_user!
+    if current_user.shop_id != @shop.id
+      redirect_to destroy_user_session_path(@shop)
+      false
+    elsif @product and current_user.shop_id != @product.shop_id
+      redirect_to shop_products_path(@shop)
+      false
+    else
+      true
+    end
+  end
 end
