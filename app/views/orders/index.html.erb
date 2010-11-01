@@ -11,7 +11,9 @@ See orders for:
       <tr>
         <th />
         <th>Product</th>
-        <th colspan="<%= @option_groups_count %>">Options</th>
+        <% if @option_groups_count %>
+          <th colspan="<%= @option_groups_count %>">Options</th>
+        <% end %>
         <th>Count</th>
       </tr>
     </thead>
@@ -44,7 +46,9 @@ See orders for:
       <tr>
         <th />
         <th>Product</th>
-        <th colspan="<%= @option_groups_count %>">Options</th>
+        <% if @option_groups_count %>
+          <th colspan="<%= @option_groups_count %>">Options</th>
+        <% end %>
         <% unless @shop %>
           <th>Shop</th>
         <% end %>
