@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
               row << nil
             end
             row << (order.user ? order.user.name : nil)
-            csv << row
+            csv << row.flatten
           end
         end
         render :file => 'public/all_orders.csv', :layout => false
