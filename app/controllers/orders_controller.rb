@@ -42,11 +42,14 @@ class OrdersController < ApplicationController
       format.csv do
         CSV.open('public/all_orders.csv', 'w') do |csv|
           @orders.each do |order|
-            csv << [
-              order.product ? order.product.name : nil,
-              order.options.collect { |o| [o.option_group.text, o.text].join(': ') }.join("\n"),
-              order.user ? order.user.name : nil
-            ]
+            row = Array.new
+            row << (order.product ? order.product.name : nil)
+            row << order.options.collect { |o| [o.option_group.text, o.text].join(': ') }
+            ((@option_groups_count || 0) - (order.options.count || 0)).times do
+              row << nil
+            end
+            row << (order.user ? order.user.name : nil)
+            csv << row
           end
         end
         render :file => 'public/all_orders.csv', :layout => false
