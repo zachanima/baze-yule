@@ -29,8 +29,8 @@ class ApplicationController < ActionController::Base
   end
 
   def find_shop
-    @shop = Shop.find_by_id(params[:shop_id] || params[:id])
-    @shop = Shop.find_by_slug(params[:shop_id] || params[:id]) if @shop.nil?
+    @shop = Shop.find_by_slug(params[:shop_id] || params[:id])
+    @shop = Shop.find_by_id(params[:shop_id] || params[:id]) if @shop.nil?
   end
 
   def authenticate_admin
