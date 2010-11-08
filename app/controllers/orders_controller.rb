@@ -41,6 +41,13 @@ class OrdersController < ApplicationController
       format.html
       format.csv do
         CSV.open('public/all_orders.csv', 'w') do |csv|
+          header = Array.new
+          header << 'Product'
+          (@option_groups_count || 0).times do
+            header << 'Option'
+          end
+          header << 'User'
+          csv << header.flatten
           @orders.each do |order|
             row = Array.new
             row << (order.product ? order.product.name : nil)
