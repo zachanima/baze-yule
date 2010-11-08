@@ -4,6 +4,9 @@ See orders for:
 <% Shop.all.each do |shop| %>
   <%= link_to shop.name, shop_orders_path(shop) %>
 <% end %>
+<% if @shop %>
+  or <%= link_to "Export #{@shop.name}", shop_orders_path(@shop) + '.csv?' + Time.new.to_i.to_s %>
+<% end %>
 
 <form>
   <table>

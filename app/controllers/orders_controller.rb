@@ -1,3 +1,5 @@
+require 'csv'
+
 class OrdersController < ApplicationController
   before_filter :authenticate_admin, :only => [:index]
   before_filter :certify_user!, :except => [:index]
@@ -34,6 +36,22 @@ class OrdersController < ApplicationController
     @option_groups_count = products.collect do |product|
       product.option_groups.count > 0 ? product.option_groups.count : nil
     end.compact.max
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        CSV.open('public/all_orders.csv', 'w') do |csv|
+          @orders.each do |order|
+            csv << [
+              order.product ? order.product.name : nil,
+              order.options.collect { |o| [o.option_group.text, o.text].join(': ') }.join("\n"),
+              order.user ? order.user.name : nil
+            ]
+          end
+        end
+        render :file => 'public/all_orders.csv', :layout => false
+      end
+    end
   end
 
   def show
