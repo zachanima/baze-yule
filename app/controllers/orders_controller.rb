@@ -56,6 +56,7 @@ class OrdersController < ApplicationController
               row << nil
             end
             row << (order.user ? order.user.name : nil)
+            row << (order.user ? order.user.department : nil)
             csv << row.flatten
           end
         end
