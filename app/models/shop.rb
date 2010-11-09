@@ -18,4 +18,8 @@ class Shop < ActiveRecord::Base
   def locale_text
     Locales[self.locale]
   end
+
+  def open?
+    (self.closes_on <= Date.today and self.opens_on >= Date.today) ? true : false
+  end
 end

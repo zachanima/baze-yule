@@ -70,8 +70,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(params[:order])
-    @order.save
+    if @shop.open?
+      @order = Order.new(params[:order])
+      @order.save
+    end
     redirect_to @shop
   end
 end

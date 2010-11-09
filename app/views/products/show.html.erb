@@ -14,5 +14,5 @@
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :product_id, :value => @product.id %>
     <%= f.submit t('place_order') %>
-  <% end %>
+  <% end if @shop.open? %>
 </div>
