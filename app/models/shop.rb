@@ -20,6 +20,6 @@ class Shop < ActiveRecord::Base
   end
 
   def open?
-    (self.closes_on <= Date.today and self.opens_on >= Date.today) ? true : false
+    (self.closes_on >= Date.today and self.opens_on <= Date.today) ? true : false
   end
 end
